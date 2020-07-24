@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check palindrome number</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div>
+        <input type="text" id="inputArea" class="form-control w-50" placeholder="enter your number to check"><br>
+        <button class="btn btn-primary" id="checkBtn">Check!</button><br>
+        <h3 id="output">Result shows here</h3>
+    </div>
+
+
+
+
+    <script>
+        document.getElementById("checkBtn").addEventListener("click", function() {
+            var input = parseFloat(document.getElementById("inputArea").value);
+            // var output = document.getElementById("output");
+
+            largestPalindromeProduct(input);
+            // getNumberInput("inputArea");
+        })
+
+        function largestPalindromeProduct(num) {
+            var reverse = 0;
+            var temp = num;
+            while (temp != 0) {
+                var remainder = temp % 10;
+                reverse = (reverse * 10) + remainder;
+                temp = parseInt(temp / 10);
+            }
+            if (num == reverse) {
+                output.innerHTML = "palindrome";
+            } else {
+                output.innerHTML = "not palindrome";
+            }
+        }
+
+        // function getNumberInput(id) {
+        //     var numberOutput = document.getElementById(id).innerText;
+        //     return numberOutput;
+        // }
+    </script>
+</body>
+
+</html>
