@@ -22,10 +22,9 @@
     <script>
         document.getElementById("checkBtn").addEventListener("click", function() {
             var input = parseFloat(document.getElementById("inputArea").value);
-            // var output = document.getElementById("output");
 
             largestPalindromeProduct(input);
-            // getNumberInput("inputArea");
+
         })
 
         function largestPalindromeProduct(num) {
@@ -42,11 +41,6 @@
                 output.innerHTML = "not palindrome";
             }
         }
-
-        // function getNumberInput(id) {
-        //     var numberOutput = document.getElementById(id).innerText;
-        //     return numberOutput;
-        // }
     </script>
 </body>
 
